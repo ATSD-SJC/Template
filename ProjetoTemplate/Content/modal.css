@@ -1,0 +1,32 @@
+﻿#divConfirma {
+    position: absolute;
+    top: 150px;
+    height: auto;
+    padding-bottom: 30px;
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+#divCortina {
+    position: fixed;
+    opacity: .8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #333;
+}
+
+.divModal {
+    position: absolute;
+    top: 150px;
+    height: auto;
+    padding-bottom: 30px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 17;
+}
