@@ -13,7 +13,7 @@ namespace ProjetoTemplate.Controllers
         {
             List<Classe> list = new List<Classe>();
 
-            var select = $"SELECT * FROM Classes WHERE (1=1) {filtro}";
+            var select = $"SELECT * FROM Classes WHERE (ativo=1) {filtro}";
 
             try
             {
@@ -54,8 +54,8 @@ namespace ProjetoTemplate.Controllers
             var salvar = "";
             if(classe.Id == 0)
             {
-                salvar = $"INSERT INTO Classes (Texto, Data, Valor, Booleano) " +
-                    $"VALUES ('{classe.Texto}', '{classe.Data}', {classe.Valor.ToString().Replace(",", ".")}, {(classe.Booleano ? 1 : 0)})";
+                salvar = $"INSERT INTO Classes (Texto, Data, Valor, Booleano, Ativo) " +
+                    $"VALUES ('{classe.Texto}', '{classe.Data}', {classe.Valor.ToString().Replace(",", ".")}, {(classe.Booleano ? 1 : 0)}, 1)";
             }
             else
             {
@@ -70,7 +70,7 @@ namespace ProjetoTemplate.Controllers
 
         public bool Delete(int Id)
         {
-            var delete = $"DELETE FROM Classes WHERE Id = {Id}";
+            var delete = $"UPDATE Classes SET ativo = 0 WHERE Id = {Id}";
 
             return new ConnectionFactory().executeNonQuery(delete, delete.Split(' ')[0], "Classe") > 0;
         }

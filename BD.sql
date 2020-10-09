@@ -1,15 +1,16 @@
 USE [master];
 
-CREATE DATABASE [ProjetoTemplate3];
+CREATE DATABASE [ProjetoTemplate];
 
-USE [ProjetoTemplate3];
+USE [ProjetoTemplate];
 
 CREATE TABLE [dbo].[Classes](
 	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	[Texto] [varchar](max) NULL,
 	[Data] [datetime] NULL,
 	[Valor] [float] NULL,
-	[Booleano] [bit] NULL
+	[Booleano] [bit] NULL,
+	[Ativo] [bit] NULL,
 );
 
 CREATE TABLE [dbo].[InnerJoins](
